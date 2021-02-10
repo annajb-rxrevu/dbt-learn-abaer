@@ -5,4 +5,5 @@ select
 
 from {{ref('stg_orders')}} o
 left join {{ref('stg_payments')}} p
+where p.status = 'success'
 group by o.order_id, o.customer_id
